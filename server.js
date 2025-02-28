@@ -40,3 +40,7 @@ app.post('/send-email', async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
+// To show on the server for testing message
+app.get('/', (req, res) => {
+  res.send('Email service is running');
+});
