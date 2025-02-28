@@ -2,11 +2,13 @@ const express = require('express');
 const axios = require('axios');
 const app = express();
 
-// const ZEPTOMAIL_API_KEY = process.env.ZEPTOMAIL_API_KEY;
+const ZEPTOMAIL_API_KEY = process.env.ZEPTOMAIL_API_KEY;
 const cors = require('cors');
 
 app.use(cors({
-  origin: function (origin, callback) {
+  origin: function (origin, callback) {po/academic_record_management$ 
+
+
     const allowedOrigins = [
       'https://academic-archival-system.web.app', 
       'http://localhost:3000'
