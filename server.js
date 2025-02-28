@@ -1,17 +1,19 @@
 const express = require('express');
 const axios = require('axios');
 const app = express();
-
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server started on port ${PORT}`);
+});
 const ZEPTOMAIL_API_KEY = process.env.ZEPTOMAIL_API_KEY;
 const cors = require('cors');
 
 app.use(cors({
-  origin: function (origin, callback) {po/academic_record_management$ 
-
-
+  origin: function (origin, callback) {
     const allowedOrigins = [
       'https://academic-archival-system.web.app', 
-      'http://localhost:3000'
+      'http://localhost:3000',
+      'https://render-node-deployment.vercel.app/' 
     ];
     
     if (!origin || allowedOrigins.includes(origin)) {
@@ -37,8 +39,4 @@ app.post('/send-email', async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
-});
-
-app.listen(3000, () => {
-  console.log('Server started on port 3000');
 });
