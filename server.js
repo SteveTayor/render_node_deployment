@@ -2,7 +2,7 @@ const express = require('express');
 const axios = require('axios');
 const app = express();
 
-const ZEPTOMAIL_API_KEY = process.env.ZEPTOMAIL_API_KEY;
+// const ZEPTOMAIL_API_KEY = process.env.ZEPTOMAIL_API_KEY;
 const cors = require('cors');
 
 app.use(cors({
